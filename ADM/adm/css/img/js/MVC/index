@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Adm</title>
+</head>
+<body>
+    <h2>Login ADM</h2>
+    <form action="controller/controller.php" method="post" onsubmit="return validateForm()">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Validação básica de email (pode ser aprimorada)
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (!email.match(emailPattern)) {
+                alert("Por favor, insira um email válido.");
+                return false;
+            }
+
+            // Outras validações de senha podem ser adicionadas aqui
+
+            return true; // O formulário será enviado se todas as validações passarem
+        }
+    </script>
+</body>
+</html>
 
